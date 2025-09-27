@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brandon Van Horn — Resume</title>
+  <style>
+    :root{
+      --accent:#111;
+      --muted:#555;
+      --divider:#ddd;
+      --max-width:900px;
+      --pad:24px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      color:#111;
+    }
+    body{
+      display:flex;
+      justify-content:center;
+      padding:32px;
+      background:#fafafa;
+    }
+    .resume{
+      width:100%;
+      max-width:var(--max-width);
+      background:#fff;
+      padding:var(--pad);
+      box-shadow:0 6px 18px rgba(0,0,0,0.06);
+      border-radius:6px;
+      line-height:1.45;
+    }
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    h1{
+      margin:0;
+      font-size:28px;
+      letter-spacing:-0.5px;
+    }
+    .contact{
+      text-align:right;
+      font-size:14px;
+      color:var(--muted);
+    }
+    .contact a{ color:var(--accent); text-decoration:none; }
+    .section-title{
+      margin:20px 0 8px;
+      font-weight:700;
+      font-size:13px;
+      color:var(--accent);
+      letter-spacing:0.6px;
+    }
+    hr.section-divider{
+      border:0;
+      border-top:1px solid var(--divider);
+      margin:6px 0 18px;
+    }
+    .two-cols{
+      display:flex;
+      gap:32px;
+      align-items:flex-start;
+      flex-wrap:wrap;
+    }
+    .col{
+      flex:1;
+      min-width:260px;
+    }
+    /* Experience / Projects lists */
+    .job{
+      margin-bottom:14px;
+    }
+    .job .job-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .job .title{
+      font-weight:700;
+    }
+    .job .org{
+      color:var(--muted);
+      font-size:14px;
+    }
+    .job ul{ margin:8px 0 0 18px; padding:0; }
+    .skills-list, .tech-list{
+      margin:6px 0 0 0;
+      padding:0;
+      list-style:none;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px 12px;
+      font-size:14px;
+      color:var(--muted);
+    }
+    .skills-list li{ background:#f5f5f5; padding:6px 10px; border-radius:4px; }
+    footer{
+      margin-top:20px;
+      font-size:13px;
+      color:var(--muted);
+    }
+    @media (max-width:640px){
+      header{ flex-direction:column; align-items:flex-start; }
+      .contact{text-align:left;}
+    }
+  </style>
+</head>
+<body>
+  <article class="resume" role="article" aria-label="Resume — Brandon Van Horn">
+    <header>
+      <div>
+        <h1>Brandon Van Horn</h1>
+        <div style="color:var(--muted); margin-top:6px;">
+          San Jose, CA
+        </div>
+      </div>
+
+      <div class="contact" aria-label="contact info">
+        <div>(669)-258-7363</div>
+        <div><a href="mailto:brandonvh2005@gmail.com">brandonvh2005@gmail.com</a></div>
+        <div><a href="https://www.linkedin.com/in/brandon-van-horn-1a0499306/" aria-label="LinkedIn">LinkedIn</a> | <a href="https://github.com/BrandonVH" aria-label="GitHub">GitHub</a></div>
+      </div>
+    </header>
+
+    <hr class="section-divider" />
+
+    <section aria-labelledby="tech-heading">
+      <h2 id="tech-heading" class="section-title">TECHNICAL SKILLS</h2>
+      <div style="font-size:15px; color:var(--muted);">
+        <strong>Languages:</strong> Python, SQL, C++, Java, HTML, CSS<br>
+        <strong>Libraries & Tools:</strong> Pandas, GeoPandas, BigQuery, Scikit-learn, TensorFlow, Beautiful Soup, Seaborn, D3.js, Flask<br>
+        <strong>Tools & Platforms:</strong> Microsoft Excel, Git, Power BI, AWS, Snowflake, DBT, Apache Airflow, Jupyter Notebook, VSCode
+      </div>
+    </section>
+
+    <section aria-labelledby="exp-heading">
+      <h2 id="exp-heading" class="section-title">EXPERIENCE</h2>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <div class="title">Data Analyst</div>
+            <div class="org">Center for Community Energy</div>
+          </div>
+          <div style="color:var(--muted); font-size:13px;">Dec 2024 - Present</div>
+        </div>
+        <ul>
+          <li>Leveraged Python to source and analyze datasets on California's population density, electric car usage, solar panel performance, and parking lot area. Utilized Pandas for data transformations.</li>
+          <li>Developed a machine learning regression model using TensorFlow and Scikit-learn to estimate parking lot availability for solar panel installation, incorporating features such as total area, population, and average income at the census tract level.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <div class="title">IT Intern</div>
+            <div class="org">CompTechS</div>
+          </div>
+          <div style="color:var(--muted); font-size:13px;">Oct 2023 - Dec 2023</div>
+        </div>
+        <ul>
+          <li>Refurbished donated computers and laptops with the intent of preparing them for future student use.</li>
+          <li>Processed computers by installing up-to-date software, replacing broken/missing parts, and testing overall functionality.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="projects-heading">
+      <h2 id="projects-heading" class="section-title">PROJECTS</h2>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <div class="title">StatsWR MCP Server</div>
+            <div class="org">Personal / Team Project</div>
+          </div>
+          <div style="color:var(--muted); font-size:13px;">June 2025 - July 2025</div>
+        </div>
+        <ul>
+          <li>Created a custom MCP server to fetch data from StatsWR’s API (a previous project) to ensure accurate responses from large language models about the website’s statistics.</li>
+          <li>Integrated the MCP Server into StatsWR by building a chatbot built on OpenAI’s gpt-4-mini model for users to interact with.</li>
+          <li>Developed multiple web scrapers using Beautiful Soup and Selenium to pull data from other websites to assist in providing accurate data for the chatbot's responses.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <div class="title">Discord-From-Scratch</div>
+            <div class="org">Team Project</div>
+          </div>
+          <div style="color:var(--muted); font-size:13px;">July 2024 - Aug 2024</div>
+        </div>
+        <ul>
+          <li>Collaborated with a team of 2 other students to develop a full-stack, real-time communication website using PostgreSQL, Express, React, and Node.js.</li>
+          <li>Architected an SQL database with tables to store user information, servers, channels, comments, and other data; devised SQL queries used by the backend to efficiently fetch servers, channels, and comments upon user login.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <div class="title">StatsWR</div>
+            <div class="org">Full-stack Web Project</div>
+          </div>
+          <div style="color:var(--muted); font-size:13px;">June 2024 - July 2024</div>
+        </div>
+        <ul>
+          <li>Contributed to the development of StatsWR, a full-stack website for ranking and profiling champions based on mobile game, League of Legends: Wild Rift. Built using MongoDB, Express, React, Node.js, and deployed on AWS Lambda/API Gateway.</li>
+          <li>Created visual/interactive graphs using D3.js, HTML, and CSS to display data such as win rates, pickrates, and banrates over time.</li>
+          <li>Conducted code review and left comments in the website's backend to improve readability for files regarding text/JSON scripting and MongoDB schemas.</li>
+          <li>Achieved 2000+ unique visitors and 20,000 page views within the first month of deployment.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="education-heading">
+      <h2 id="education-heading" class="section-title">EDUCATION</h2>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <div class="title">University of California, San Diego</div>
+            <div class="org">Bachelor of Science, Data Science</div>
+          </div>
+          <div style="color:var(--muted); font-size:13px;">Expected Graduation Date: March 2027</div>
+        </div>
+        <ul>
+          <li><strong>GPA:</strong> 4.0</li>
+          <li><strong>Relevant Coursework:</strong> Data Structures and Algorithms, Object-Oriented Programming, Machine Learning, Statistical Methods, Principles of Data Science</li>
+        </ul>
+      </div>
+    </section>
+  </article>
+</body>
+</html>
