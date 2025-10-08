@@ -3,4 +3,82 @@ body {
 	   and use the OS’s UI font as the website font
 	 */
   font: 100%/1.5 system-ui;
+  max-width: 100ch;
+  margin-inline: max(1em, (100% - 100ch) / 2); /* center content with padding in case window gets too small */
+}
+
+nav{
+  display: flex; /* enable flexible box layout for children */
+  margin-bottom: 0.5em; /* separate nav bar from rest of content */
+  border-bottom-width: 1px; /* visually separate nav bar from rest of content */
+  border-bottom-style: solid;
+  border-bottom-color: oklch(80% 3% 200);
+}
+
+nav a{
+  flex: 1; /* make anchor elements take up same space within nav */
+  text-decoration: none; /* remove underrline from links */
+  color: inherit; /* remove default link color and make it use same text color as parent */ 
+  text-align: center; /* center text in box */
+  padding: 0.5em; /* give each link spacing */ 
+}
+
+a:hover{
+  border-bottom-color: var(--color-accent);
+  background-color: oklch(from var(--color-accent) 95% 5% h); /* lighter color with same hue as --color-accent */ 
+}
+
+.current{
+  border-bottom-width: 0.4em;
+  border-bottom-style: solid;
+  border-bottom-color: oklch(80% 3% 200);
+}
+
+html{
+  --color-accent: oklch(65% 50% 0); /* Custom property. All children elements of html can access it */
+  accent-color: var(--color-accent);
+}
+
+form {
+  display: grid;
+  grid-template-columns: auto 1fr; /* auto means that the column will be as wide as its content, and 1fr means that the column will take up the remaining space (similar to flex: 1) */
+  gap: 1em; /* row and column spacing */
+}
+
+label {
+  display: contents; /* makes label text + input align directly on grid */
+}
+
+input, textarea {
+  font: inherit;
+  grid-column: 1 / -1;
+  box-sizing: border-box;
+}
+
+button {
+  grid-column: 1 / -1; /* make button span both columns */
+  font: inherit;
+}
+
+.projects{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /* make the grid have as many columns as can fit in the container, each with a minimum width of 15em and a maximum width of 1fr (i.e. the remaining space) */
+}
+
+article{
+  grid-template-rows: subgrid; 
+  grid-row: span 3; /* each <article> should span 3 rows without having to specify the starting row. */ 
+  gap: 1em;
+}
+
+h2{
+  margin: 0;
+}
+
+body h1{
+  font-size: 4em; /* The default <h1> size is very close to the default <h2> size, violating the design principle of contrast. Make it significantly larger (400% the body text) */
+}
+
+h1, h2, h3, h4, h5, h6{
+  line-height: 1.1;
 }
