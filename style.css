@@ -13,6 +13,7 @@ nav{
   border-bottom-width: 1px; /* visually separate nav bar from rest of content */
   border-bottom-style: solid;
   border-bottom-color: oklch(80% 3% 200);
+  --border-color: oklch(50% 10% 200 / 40%); /* custom property that children can access */ 
 }
 
 nav a{
@@ -24,19 +25,22 @@ nav a{
 }
 
 a:hover{
+  /* background-color: oklch(from var(--color-accent) 95% 5% h); */ /* lighter color with same hue as --color-accent */ 
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%); /* mix with canvas color for dark mode */ 
+  /* border-bottom-color: var(--border-color); */ 
   border-bottom-color: var(--color-accent);
-  background-color: oklch(from var(--color-accent) 95% 5% h); /* lighter color with same hue as --color-accent */ 
 }
 
 .current{
   border-bottom-width: 0.4em;
   border-bottom-style: solid;
-  border-bottom-color: oklch(80% 3% 200);
+  border-bottom-color: oklch(50% 10% 200 / 40%); /* oklch(80% 3% 200); added 40% opacity */
 }
 
 html{
   --color-accent: oklch(65% 50% 0); /* Custom property. All children elements of html can access it */
   accent-color: var(--color-accent);
+  color-scheme: dark; /* forces a color scheme. Can also be light, or light dark which chooses color scheme based on user OS */
 }
 
 form {
@@ -81,4 +85,12 @@ body h1{
 
 h1, h2, h3, h4, h5, h6{
   line-height: 1.1;
+}
+
+/* Make sure switch for color scheme is in top right */
+.color-scheme{
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  font: inherit;
 }
