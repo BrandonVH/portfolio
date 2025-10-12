@@ -49,7 +49,7 @@ form {
   gap: 1em; /* row and column spacing */
 }
 
-label {
+html body form label {
   display: contents; /* makes label text + input align directly on grid */
 }
 
@@ -85,12 +85,4 @@ body h1{
 
 h1, h2, h3, h4, h5, h6{
   line-height: 1.1;
-}
-
-/* Make sure switch for color scheme is in top right */
-.color-scheme{
-  position: absolute;
-  top: 1em;
-  right: 1em;
-  font: inherit;
 }
