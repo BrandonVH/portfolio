@@ -176,9 +176,51 @@ if (localStorage.colorScheme){
   select.value = localStorage.colorScheme;
 }
 
+// Type this into developer console on projects page to convert the html into json data
+// $$('.projects > article').map((a) => ({
+//   title: $('h2', a).textContent,
+//   image: $('img', a).getAttribute('src'),
+//   description: $('p', a).textContent,
+// }));
 
+// Load project data from a JSON file and dynamically display it on the Projects page.
+export async function fetchJSON(url) {
+  try {
+    // Fetch the JSON file from the given URL
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch projects: ${response.statusText}`);
+    }
+    const data = await response.json();
+    return data;
 
+  } catch (error) {
+    console.error('Error fetching or parsing JSON data:', error);
+  }
+}
 
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  containerElement.innerHTML = ''; // Clear the existing content of the container element.
+
+  let elem = document.querySelector('h1');
+  elem.textContent = projects.length + ' Projects';
+
+  for (let i = 0; i < projects.length; i++){
+    const project = projects[i];
+    const article = document.createElement('article');
+    article.innerHTML = `
+    <${headingLevel}>${project.title}</${headingLevel}>
+    <img src="${project.image}" alt="${project.title}">
+    <p>${project.description}</p>
+    `; // Use the innerHTML property to populate the <article> element with dynamic content.
+    containerElement.append(article);
+
+  }
+}
+
+export async function fetchGitHubData(username) {
+  return fetchJSON(`https://api.github.com/users/${username}`);
+}
 
 
 

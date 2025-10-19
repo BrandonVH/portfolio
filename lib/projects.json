@@ -1,0 +1,66 @@
+[
+    {
+        "title": "Discord-From-Scratch",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Architected an SQL database for a full-stack, real time communication website using tables to store user information, servers, channels, comments, and other data, all within a local PostgreSQL database. Also devised SQL queries called by the backend to efficiently fetch servers, channels, and comments upon user login. Inspired by the chatroom app known as Discord."
+    },
+    {
+        "title": "StatsWR",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "StatsWR is a website that presents data to users in the form of character win rates, pick rates, and ban rates based on the mobile game, League of Legends: Wild Rift. Developed visual/interactive graphs using D3.js, HTML, and CSS. Achieved 2000+ unique visitors and 20,000 page views within the first month of deployment, with a 30% user retention rate. Built using the MERN stack."
+    },
+    {
+        "title": "StatsWR MCP Server",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Created a custom MCP server to fetch data from StatsWR’s API (a previous project) to ensure accurate responses from large language models about the website’s statistics. Integrated the MCP Server into StatsWR by building a chatbot built on OpenAI’s o4-mini model for users to interact with. Developed multiple web scrapers using Beautiful Soup and Selenium to pull data from other websites to assist in providing accurate data for the chatbot’s responses."
+    },
+    {
+        "title": "Wildfire Classification Model",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Leveraged Python to pull data from APIs to obtain past weather conditions linked to wildfire occurrences. Developed a binary classification model using XGBoost that obtained a validation accuracy of 85% by incorporating factors such as temperature, vegetation, elevation, and soil moisture on a given day. Also developed a CNN using TensorFlow/Scikit-learn to predict the odds of wildfire occurrences, using satellite images sourced from Kaggle to obtain a validation accuracy of 97.4%."
+    },
+    {
+        "title": "Voluptates maxime aut itaque.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Dolorum soluta veritatis enim odio, quasi dignissimos ipsum libero voluptate doloremque, ad ratione autem quisquam temporibus? Quisquam, dolorem. Sapiente nostrum, ad temporibus alias eius cupiditate id consectetur magnam porro aliquam."
+    },
+    {
+        "title": "Ipsam debitis totam quo!",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Adipisci tempora ipsam ullam accusantium. Facilis dolore itaque quis repudiandae deserunt cum commodi dolores dicta, perferendis dolorum porro consequuntur nam nobis doloribus repellendus sapiente facere veritatis, eius veniam! Quia, corporis?"
+    },
+    {
+        "title": "Provident perspiciatis a dolore!",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Quis eveniet dicta, culpa molestias similique beatae ea facilis. Corporis quo quibusdam voluptas voluptatum libero illum saepe aperiam ipsum non porro nisi rem, ullam voluptatem optio vero distinctio placeat sed?"
+    },
+    {
+        "title": "Voluptatem iusto sunt aut.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Quo culpa consectetur ex. Aspernatur impedit beatae culpa enim neque? Voluptates et reprehenderit sint nihil? Dolorem possimus, fugit non deserunt, voluptas quisquam dolorum adipisci iure aut libero enim esse consequatur."
+    },
+    {
+        "title": "Natus laborum illo maiores.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Dicta aut eaque non amet iste sunt ipsam quaerat neque facere ea. Fugiat aliquam quia distinctio at vero. Autem sit possimus minus tenetur, fuga soluta iste aliquid blanditiis. Perferendis, aspernatur?"
+    },
+    {
+        "title": "Nesciunt fuga temporibus consequuntur.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Quasi dicta eos vel quo nostrum accusamus quis facilis maiores dolor deserunt quaerat quibusdam sit facere cumque soluta fugit laborum tempore ex ducimus ad repellat minus obcaecati, autem totam. Eos?"
+    },
+    {
+        "title": "Ea quos similique sequi.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Omnis illo, beatae ut, voluptate commodi, nobis ducimus vitae sit quod totam accusantium porro sapiente facere quidem modi maxime. Necessitatibus repudiandae sed dolores obcaecati saepe itaque facere illum voluptates esse!"
+    },
+    {
+        "title": "Perferendis explicabo esse a.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Voluptatem consectetur in ipsum qui quis voluptate, ducimus quidem quibusdam doloribus temporibus. Vel ipsa porro, ipsam labore pariatur minima rerum sint nulla voluptatum recusandae itaque fuga quibusdam error vero adipisci?"
+    }
+]
