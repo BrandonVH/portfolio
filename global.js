@@ -212,6 +212,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     <${headingLevel}>${project.title}</${headingLevel}>
     <img src="${project.image}" alt="${project.title}">
     <p>${project.description}</p>
+    <div style="font-variant-numeric: oldstyle-nums; font-family:Baskerville">Year: ${project.year}</div>
     `; // Use the innerHTML property to populate the <article> element with dynamic content.
     containerElement.append(article);
 

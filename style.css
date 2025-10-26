@@ -105,3 +105,60 @@ dd {
   text-align: center;
   margin: 0;
 }
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+
+  overflow: visible;
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr)); /* responsive layout */
+  gap: 0.5em 1em; /* spacing between items */
+  list-style: none; /* remove default bullets */
+  padding: 1em;
+  margin: 1em 0; 
+  border: 1px solid #ccc; 
+  flex: 1; /* occupy all available width */
+}
+
+/* Each legend item */
+.legend li {
+  display: flex;
+  align-items: center; /* vertically center swatch and text */
+  gap: 0.5em; /* horizontal space between swatch and label */
+  font-family: sans-serif;
+}
+
+/* Swatch styling */
+.legend .swatch {
+  display: inline-block;
+  aspect-ratio: 1 / 1; /* square or circle */
+  width: 1em; /* controls size */
+  background-color: var(--color); /* inherits from parent element */
+  border-radius: 50%; /* makes it a circle; reduce to e.g. 10% for rounded square */
+}
+
+/* Add a hover effect to the wedges. What about fading out all other wedges when a wedge is hovered? 
+We can target the <svg> element when it contains a hovered <path> by using the :has() pseudo-class: 
+Why not just use :hover instead of :has(path:hover)? Because the <svg> can be covered without any of the wedges being hovered, and then all wedges would be faded out. */
+&:has(path:hover) {
+  path:not(:hover) {
+    opacity: 0.5;
+  }
+
+  path { /* transition */
+    transition: 300ms;
+    cursor: pointer;
+  }
+}
+
+.selected {
+  --color: oklch(60% 45% 0) !important; /* we add !important because we are trying to override the --color variable set via the style attribute, which has higher precedence than any selector. */
+
+  &:is(path) {
+    fill: var(--color);
+  }
+}
