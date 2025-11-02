@@ -162,3 +162,55 @@ Why not just use :hover instead of :has(path:hover)? Because the <svg> can be co
     fill: var(--color);
   }
 }
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+/* make selected circle from brush stand out */
+circle.selected {
+  fill: #ff6b6b;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+/*Tooltip transition*/
+dl.info {
+  /* ... other styles ... */
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#commit-tooltip {
+  position: absolute;
+  pointer-events: none; /* so it doesn’t block hovering */
+  background-color: rgba(255, 255, 255, 0.85);
+  color: black;
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/*Styling selection rectangle for brush */
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8; /* 5 + 3 */
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
