@@ -167,6 +167,17 @@ circle {
   transition: 200ms;
   transform-origin: center;
   transform-box: fill-box;
+
+  /* 
+  FOR SCATTER PLOT CIRCLE RADIUS TRANSITION WHEN THE SLIDER IS CHANGED
+  even though we are now getting a nice transition when an existing commit changes radius, there is no transition when a new commit appears. 
+  This is because CSS transitions fire for state changes where both the start and end changes are described by CSS. 
+  A new element being added does not have a start state, so it doesn’t transition. We can use CSS transitions to help resolve this, 
+  by explicitly telling the browser what the start state should be. That’s what the @starting-style rule is for!
+  */
+  @starting-style { 
+    r: 0;
+  }
 }
 
 /* make selected circle from brush stand out */
@@ -213,4 +224,68 @@ dl.info[hidden]:not(:hover, :focus-within) {
   stroke-opacity: 0.7;
   stroke-dasharray: 5 3;
   animation: marching-ants 2s linear infinite;
+}
+
+
+/* (For meta/index.html) We should style the <dl> as a grid so that the filenames and line counts are aligned. The only thing that is a bit different now is that we have a <div> around each <dt> and <dd>. To prevent that from interfering with the grid we should use Subgrid:*/
+#files {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+
+  > div {
+    grid-column: 1 / -1;
+    display: flex;              /* CHANGED: was display:grid */
+    align-items: center;        /* keeps filename + small aligned with dots */
+    gap: 1em;                   /* spacing between dt and dd */
+  }
+
+  dt {
+    grid-column: 1;
+    display: flex;              /* allow code + small on one line */
+    align-items: center;
+    gap: 0.5em;                 /* spacing between filename and small */
+  }
+
+  dt small {
+    font-size: 0.75em;
+    opacity: 0.7;
+  }
+
+  dd {
+    grid-column: 2;
+    display: flex;              /* dots line up with small */
+    flex-wrap: wrap;
+    gap: 0.15em;
+    margin: 0;
+  }
+
+  .loc {
+    width: 0.5em;
+    aspect-ratio: 1;
+    background: var(--color, steelblue); /*fall back on steelblue --color is undefined. defined in meta/main.js in updateFileDisplay */
+    border-radius: 50%;
+  }
+}
+
+/* for scrolling story */ 
+#scrolly-1 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+
+  > * {
+    flex: 1;
+  }
+}
+
+#scatter-story {
+  position: relative;
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  height: 50vh;
 }

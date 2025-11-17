@@ -8,11 +8,26 @@
     </head>
 
     <body>
-        
+
+        <div style="flex: 1; align-items: baseline; padding-top: 1em; padding-bottom: 1em;">
+            <label>
+                Show commits until: 
+                <input type="range" min="0" max="100" id="commit-progress" style="width: 33em;">
+                <time style="margin-left: auto" id="commit-time"></time>
+            </label>
+        </div>
+
+
         <div id="stats" style="font-weight: bold">Summary</div>
 
         <h2>Commits by time of day</h2>
-        <div id="chart"></div>
+
+        <div id="scrolly-1">
+            <div id="scatter-story">some filler text here</div>
+                <div id="scatter-plot">
+                    <div id="chart"></div>
+                </div>
+        </div>  
 
         <!-- Tooltip to show data for each dot -->
         <dl id="commit-tooltip" class="info tooltip" hidden>
@@ -37,6 +52,18 @@
 
         <p id="selection-count">No commits selected</p>
         <dl id="language-breakdown" class="stats"></dl>
+
+
+        <dl id="files">
+            <!-- we want the following structure for each file:
+            <div>
+                <dt>
+                <code>{file.name}</code>
+                </dt>
+                <dd>{file.lines.length} lines</dd>
+            </div>
+            -->
+        </dl>
 
         <script type="module" src="./main.js"></script>
         <script type="module" src="../global.js"></script>
